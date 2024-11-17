@@ -128,7 +128,13 @@ return {
     },
   },
 
-  { "github/copilot.vim", lazy = false },
+  {
+    "github/copilot.vim",
+    lazy = false,
+    config = function()
+      require("copilot").setup()
+    end,
+  },
 
   {
     "folke/zen-mode.nvim",
