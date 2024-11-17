@@ -44,59 +44,12 @@ return {
 
   {
     "williamboman/mason.nvim",
-    opts = {
-      ensure_installed = {
-        "clangd",
-        "clang-format",
-        "lua-language-server",
-        "stylua",
-        "html-lsp",
-        "css-lsp",
-        "prettier",
-        "pyright",
-        "debugpy",
-        "rust-analyzer",
-        "bash-language-server",
-        "typescript-language-server",
-        "eslint-lsp",
-        "ruff",
-      },
-    },
+    opts = require "configs.mason",
   },
 
   {
     "nvim-treesitter/nvim-treesitter",
-    opts = {
-      ensure_installed = {
-        "c",
-        "cpp",
-        "vim",
-        "lua",
-        "vimdoc",
-        "html",
-        "css",
-        "javascript",
-        "typescript",
-        "python",
-        "rust",
-        "bash",
-        "haskell",
-      },
-
-      highlight = {
-        enable = true,
-      },
-
-      incremental_selection = {
-        enable = true,
-        keymaps = {
-          init_selection = "g;", -- set to `false` to disable one of the mappings
-          node_incremental = "g;",
-          scope_incremental = false,
-          node_decremental = "g,",
-        },
-      },
-    },
+    opts = require "configs.nvimtreesitter",
   },
 
   --linters, formatters, etc
@@ -112,6 +65,14 @@ return {
     "mrcjkb/rustaceanvim",
     version = "^5", -- Recommended
     lazy = false, -- This plugin is already lazy
+    config = function()
+      vim.g.rustaceanvim = {
+        -- LSP configuration
+        server = {
+          on_attach = require("configs.rustaceanvim").on_attach,
+        },
+      }
+    end,
   },
 
   {

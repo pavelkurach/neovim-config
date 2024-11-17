@@ -15,7 +15,7 @@ M.on_attach = function(client, bufnr)
 end
 
 local lspconfig = require "lspconfig"
-local servers = { "html", "cssls", "bashls", "ts_ls" }
+local servers = { "lua_ls", "html", "cssls", "bashls", "ts_ls", "hls" }
 
 -- lsps with default config
 for _, lsp in ipairs(servers) do
