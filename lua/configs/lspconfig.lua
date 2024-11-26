@@ -28,7 +28,10 @@ end
 
 -- python
 lspconfig.pyright.setup {
-  on_attach = M.on_attach,
+  on_attach = function(client, bufnr)
+    M.on_attach(client, bufnr)
+    vim.keymap.set("n", "<leader>dpr", ":lua require('dap-python').test_method()<CR>", { desc = "Test Method" })
+  end,
   capabilities = M.capabilities,
   filetypes = { "python" },
   settings = {

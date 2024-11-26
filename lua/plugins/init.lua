@@ -103,6 +103,7 @@ return {
       "rcarriga/nvim-dap-ui",
       "nvim-neotest/nvim-nio",
     },
+    lazy = false,
     config = function()
       require("dap-python").setup "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
       require("dap-python").test_runner = "pytest"

@@ -17,10 +17,12 @@ M.on_attach = function(client, bufnr)
     end,
     { silent = true, buffer = bufnr }
   )
+
+  vim.keymap.set("n", "<leader>dpr", "<CMD>RustLsp debuggables<CR>", { desc = "Test Method" })
 end
 
 M.dap = function()
-  local extension_path = vim.fn.stdpath("data") .. "mason/packages/codelldb/extension/"
+  local extension_path = vim.fn.stdpath "data" .. "mason/packages/codelldb/extension/"
   local codelldb_path = extension_path .. "adapter/codelldb"
   local liblldb_path = extension_path .. "lldb/lib/liblldb"
   local this_os = vim.uv.os_uname().sysname .. ""
