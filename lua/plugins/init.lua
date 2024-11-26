@@ -67,10 +67,10 @@ return {
     lazy = false, -- This plugin is already lazy
     config = function()
       vim.g.rustaceanvim = {
-        -- LSP configuration
         server = {
           on_attach = require("configs.rustaceanvim").on_attach,
         },
+        dap = require("configs.rustaceanvim").dap(),
       }
     end,
   },
@@ -84,10 +84,15 @@ return {
   -- Debug Adapter Protocol client
   {
     "mfussenegger/nvim-dap",
+    config = require("configs.nvimdap").config,
   },
 
   -- IO for nvim-dap
-  { "rcarriga/nvim-dap-ui", dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } },
+  {
+    "rcarriga/nvim-dap-ui",
+    dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
+    config = require("configs.nvimdapui").config,
+  },
 
   -- An extension for nvim-dap providing default configurations for python and methods to debug individual test methods or classes
   {
