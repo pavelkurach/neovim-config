@@ -19,6 +19,9 @@ local options = vim.tbl_deep_extend("force", nvchad_options(), {
       "--no-ignore",
     },
   },
+  extension_list = {
+    "cmdline",
+  },
 })
 
 return options

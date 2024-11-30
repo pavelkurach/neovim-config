@@ -21,6 +21,7 @@ map("n", "din", ":DapStepInto<CR>", { desc = "DAP Step Into" })
 map("n", "dou", ":DapStepOut<CR>", { desc = "DAP Step Out" })
 map("n", "dov", ":DapStepOver<CR>", { desc = "DAP Step Over" })
 map("n", "dat", ":DapTerminate<CR>", { desc = "DAP Terminate" })
+map("n", "dut", '<cmd>lua require"dapui".toggle()<CR>', { desc = "DAP Toggle UI" })
 
 
 map("n", "<leader>dv", ":DiffviewOpen<CR>", { desc = "Diffview Open" })

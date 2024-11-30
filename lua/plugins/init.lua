@@ -15,7 +15,14 @@ return {
 
   {
     "nvim-telescope/telescope.nvim",
-    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-lua/plenary.nvim",
+      "jonarrien/telescope-cmdline.nvim",
+    },
+    keys = {
+      { "<leader><leader>", "<cmd>Telescope cmdline<cr>", desc = "Cmdline" },
+    },
     cmd = "Telescope",
     opts = function()
       return require "configs.telescope"
@@ -246,4 +253,6 @@ return {
   },
 
   { "akinsho/git-conflict.nvim", version = "*", config = true, lazy = false },
+
+  { "atiladefreitas/dooing", lazy = false },
 }
