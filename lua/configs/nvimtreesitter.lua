@@ -13,6 +13,7 @@ return {
     "rust",
     "bash",
     "haskell",
+    "asm",
   },
 
   highlight = {

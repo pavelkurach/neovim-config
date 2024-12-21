@@ -9,6 +9,11 @@ local opts = {
 
     -- javascript/typescript
     null_ls.builtins.formatting.prettierd,
-  }
+
+    -- assembly
+    null_ls.builtins.formatting.asmfmt.with {
+      filetypes = { "asm", "s", "S" },
+    },
+  },
 }
 return opts

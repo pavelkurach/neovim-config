@@ -2,6 +2,9 @@ return {
   opts = {
     provider = "copilot", -- Recommend using Claude
     auto_suggestions_provider = "copilot",
+    copilot = {
+      model = "claude-3.5-sonnet"
+    }
   },
   dependencies = {
     "nvim-treesitter/nvim-treesitter",

@@ -10,7 +10,7 @@ M.on_attach = function(client, bufnr)
     return { buffer = bufnr, desc = "LSP " .. desc }
   end
 
-  vim.keymap.set("n", "gt", vim.lsp.buf.type_definition, opts "Go to type definition")
+  -- vim.keymap.set("n", "gt", vim.lsp.buf.type_definition, opts "Go to type definition")
   vim.keymap.set("n", "gh", vim.lsp.buf.hover, opts "hover information")
 end
 
@@ -63,6 +63,14 @@ lspconfig.clangd.setup {
     "clangd",
     "--offset-encoding=utf-16",
   },
+}
+
+lspconfig.asm_lsp.setup {
+  on_attach = M.on_attach,
+  on_init = M.on_init,
+  capabilities = M.capabilities,
+  filetypes = { "asm", "s", "S" },
+  cmd = { "asm-lsp" },
 }
 
 return M

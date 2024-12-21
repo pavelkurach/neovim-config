@@ -80,6 +80,7 @@ return {
     opts = function()
       return require "configs.null-ls"
     end,
+    lazy = false,
   },
 
   {
@@ -124,7 +125,7 @@ return {
       "rcarriga/nvim-dap-ui",
       "nvim-neotest/nvim-nio",
     },
-    lazy = false,
+    -- lazy = false,
     config = function()
       require("dap-python").setup "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
       require("dap-python").test_runner = "pytest"
@@ -197,7 +198,7 @@ return {
       -- OR 'ibhagwan/fzf-lua',
       "nvim-tree/nvim-web-devicons",
     },
-    lazy = false,
+    -- lazy = false,
     config = function()
       require("octo").setup {
         enable_builtin = true,
@@ -269,4 +270,20 @@ return {
   { "akinsho/git-conflict.nvim", version = "*", config = true, lazy = false },
 
   { "atiladefreitas/dooing", lazy = false },
+
+  {
+    "aaronik/treewalker.nvim",
+    opts = {
+      highlight = true, -- default is false
+    },
+    lazy = false,
+  },
+
+  -- lazy.nvim
+  {
+    "m4xshen/hardtime.nvim",
+    dependencies = { "MunifTanjim/nui.nvim" },
+    opts = {},
+    lazy = false,
+  },
 }
