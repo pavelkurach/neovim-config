@@ -48,12 +48,12 @@ map("n", "<leader>ih", "<cmd>lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hin
   desc = "Toggle Inlay Hints",
 })
 
-map("n", "<S-j>", ":Treewalker Down<CR>", { noremap = true })
-map("n", "<S-k>", ":Treewalker Up<CR>", { noremap = true })
-map("n", "<S-h>", ":Treewalker Left<CR>", { noremap = true })
-map("n", "<S-l>", ":Treewalker Right<CR>", { noremap = true })
+map("n", "tj", ":Treewalker Down<CR>", { noremap = true })
+map("n", "tk", ":Treewalker Up<CR>", { noremap = true })
+map("n", "th", ":Treewalker Left<CR>", { noremap = true })
+map("n", "tl", ":Treewalker Right<CR>", { noremap = true })
 
-map("n", "fr", ":Telescope lsp_references<CR>", { noremap = true, silent = true })
-map("n", "fd", ":Telescope lsp_definitions<CR>", { noremap = true, silent = true })
-map("n", "fi", ":Telescope lsp_implementations<CR>", { noremap = true, silent = true })
-map("n", "ft", ":Telescope lsp_type_definitions<CR>", { noremap = true, silent = true })
+map("n", "<leader>fr", ":Telescope lsp_references<CR>", { noremap = true, silent = true })
+map("n", "<leader>fd", ":Telescope lsp_definitions<CR>", { noremap = true, silent = true })
+map("n", "<leader>fi", ":Telescope lsp_implementations<CR>", { noremap = true, silent = true })
+map("n", "<leader>ft", ":Telescope lsp_type_definitions<CR>", { noremap = true, silent = true })

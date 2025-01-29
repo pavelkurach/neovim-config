@@ -279,11 +279,10 @@ return {
     lazy = false,
   },
 
-  -- lazy.nvim
-  {
-    "m4xshen/hardtime.nvim",
-    dependencies = { "MunifTanjim/nui.nvim" },
-    opts = {},
-    lazy = false,
-  },
+  -- {
+  --   "m4xshen/hardtime.nvim",
+  --   dependencies = { "MunifTanjim/nui.nvim" },
+  --   opts = {},
+  --   lazy = false,
+  -- },
 }
