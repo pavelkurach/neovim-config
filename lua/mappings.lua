@@ -57,3 +57,9 @@ map("n", "<leader>fr", ":Telescope lsp_references<CR>", { noremap = true, silent
 map("n", "<leader>fd", ":Telescope lsp_definitions<CR>", { noremap = true, silent = true })
 map("n", "<leader>fi", ":Telescope lsp_implementations<CR>", { noremap = true, silent = true })
 map("n", "<leader>ft", ":Telescope lsp_type_definitions<CR>", { noremap = true, silent = true })
+map("n", "<leader>ic", ":Telescope lsp_incoming_calls<CR>", { noremap = true, silent = true })
+map("n", "<leader>oc", ":Telescope lsp_outgoing_calls<CR>", { noremap = true, silent = true })
+
+map("n", "<leader>rt", ":RustTest<CR>", { noremap = true, silent = false })
+map("n", "<leader>rta", ":RustTest!<CR>", { noremap = true, silent = false })
+
