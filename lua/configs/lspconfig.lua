@@ -11,5 +11,5 @@ vim.api.nvim_create_autocmd("LspAttach", {
   end,
 })
 
-local servers = { "html", "cssls", "basedpyright" }
+local servers = { "html", "cssls", "basedpyright", "clangd" }
 vim.lsp.enable(servers)

@@ -1,0 +1,3 @@
+vim.lsp.config("clangd", {
+  cmd = { "clangd", "--offset-encoding=utf-16" },
+})

@@ -69,7 +69,6 @@ return {
 
   {
     "christoomey/vim-tmux-navigator",
-    lazy = false,
     cmd = {
       "TmuxNavigateLeft",
       "TmuxNavigateDown",
@@ -163,5 +162,41 @@ return {
     dependencies = { "nvim-lua/plenary.nvim" },
     lazy = false,
     opts = {},
+  },
+
+  {
+    "nvimtools/none-ls.nvim",
+    ft = { "python" },
+    opts = function()
+      return require "configs.null-ls"
+    end,
+    lazy = false,
+  },
+
+  {
+    "mfussenegger/nvim-dap",
+    config = require("configs.nvimdap").conf,
+  },
+
+  {
+    "rcarriga/nvim-dap-ui",
+    dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
+    config = require("configs.nvimdapui").config,
+  },
+
+  -- An extension for nvim-dap providing default configurations for python and methods to debug individual test methods or classes
+  {
+    "mfussenegger/nvim-dap-python",
+    ft = "python",
+    dependencies = {
+      "mfussenegger/nvim-dap",
+      "rcarriga/nvim-dap-ui",
+      "nvim-neotest/nvim-nio",
+    },
+    -- lazy = false,
+    config = function()
+      require("dap-python").setup "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
+      require("dap-python").test_runner = "pytest"
+    end,
   },
 }
